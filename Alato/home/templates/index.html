@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center" style="height: 100vh;">
+        <div class="container text-center text-white">
+            <h1>Discover the Best Food & Drinks</h1>
+            <p>Explore restaurants, cafes, and more around you.</p>
+            <div class="search-bar mt-4">
+                <form class="d-flex justify-content-center">
+                    <input class="form-control me-2 w-50" type="search" placeholder="Search for restaurants or cuisines" aria-label="Search">
+                    <button class="btn btn-danger" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Offers Section with Carousel -->
+    {% include "indexoffer.html" %}
+
+    <!-- Restaurants Section with Cards -->
+    {% include "indexrestaurantcard.html" %}
+
+    <!-- Reach Me Out Section with Contact Form -->
+    {% include "reachmeout.html" %}
+    
+    
+    
+{% endblock %}

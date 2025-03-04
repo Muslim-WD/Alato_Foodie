@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form id="signupForm" method="POST" action="{% url 'customer_signup' %}">
+    {% csrf_token %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="background-color: #2F4F4F; color: #E6E6FA;"> <!-- Dark cyan and light purple -->
+                    <div class="card-header text-center" style="background-color: #483D8B; color: #FFFFFF;"> <!-- Purple header -->
+                        <h5 class="card-title">Sign Up</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+                            <!-- Display error for username -->
+                            {% if form.username.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.username.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+                            <!-- Display error for email -->
+                            {% if form.email.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.email.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter phone number" required>
+                            <!-- Display error for phone number -->
+                            {% if form.phone_number.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.phone_number.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password1">Password</label>
+                            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" required>
+                            <!-- Display error for password1 -->
+                            {% if form.password1.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.password1.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password2">Confirm Password</label>
+                            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" required>
+                            <!-- Display error for password2 -->
+                            {% if form.password2.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.password2.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p>Already have an account? <a href="{% url 'customer_login' %}">Login here</a></p>
+                    </div>
+
+                    <!-- Display non-field errors (e.g., general errors like password mismatch) -->
+                    {% if form.non_field_errors %}
+                        <div class="text-danger">
+                            {% for error in form.non_field_errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <div class="card-footer text-end" style="background-color: #A9A9A9;"> <!-- Greyish footer -->
+                        <button type="submit" class="btn btn-primary" style="background-color: #20B2AA;">Sign Up</button> <!-- Dark cyan button -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

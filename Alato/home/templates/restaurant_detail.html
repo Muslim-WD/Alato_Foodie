@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">{{ restaurant.name }}</h2>
+    <p><strong>Address:</strong> {{ restaurant.address }}</p>
+    <p><strong>Cuisine:</strong> {{ restaurant.cuisine }}</p>
+    <p><strong>Rating:</strong> {{ restaurant.rating }}</p>
+
+    <h3>Food Items</h3>
+    <div class="row">
+        {% for food_item in food_items %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ food_item.image.url }}" class="card-img-top" alt="{{ food_item.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ food_item.name }}</h5>
+                    <p class="card-text">{{ food_item.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ food_item.price }}</p>
+                    {% comment %} {% url 'add_to_cart' food_item.pk %} {% endcomment %}
+                    <a href="{% url 'add_to_cart' food_item.pk %}" class="btn btn-success">Add to Cart</a>
+                </div>
+                
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+    {% comment %} <a href="{% url 'add_food_item' restaurant.pk %}" class="btn btn-primary">Add Food Item</a> {% endcomment %}
+</div>
+{% endblock %}

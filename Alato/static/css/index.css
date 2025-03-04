@@ -1,0 +1,103 @@
+body {
+    
+    height: 100vh;
+    color: white;
+    background-color: rgb(29, 28, 28);
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.hero-text {
+    text-align: center;
+    margin-top: 15%;
+}
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+.hero-text p {
+    font-size: 5.5rem;
+}
+.search-bar {
+    margin-top: 2rem;
+}
+.form-control {
+    height: 3rem;
+    font-size: 1.2rem;
+}
+#hero {
+    /* Set the background image */
+    background: url('../images/home3.jpg') no-repeat center center/cover;
+    
+    /* Full height and centered content */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+#hero h1, #hero p {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.search-bar input {
+    width: 50%;
+}
+
+/* login_modal styles */
+/* Custom Reddish-Grey Modal Styles */
+
+
+/* Custom Modal Header (Reddish) */
+.custom-modal .modal-header {
+    background-color: #da533c !important; /* Reddish color */
+    color: #fff !important; /* White text for contrast */
+}
+
+/* Custom Modal Body (Light Grey) */
+.custom-modal .modal-body {
+    background-color: #D3D3D3 !important; /* Light grey background */
+}
+
+/* Modal Footer */
+.custom-modal .modal-footer {
+    background-color: #f5f5f5 !important; /* Light grey for footer */
+    border-top: none !important; /* Remove default border */
+}
+
+/* Align buttons closer together */
+.custom-modal-footer .btn {
+    margin-left: 10px; /* Small margin to separate buttons */
+    
+}
+
+/* Adjust modal dialog size if needed */
+.modal-dialog {
+    max-width: 500px; /* Control modal width */
+}
+
+/* Ensure the text color is applied to the labels */
+.custom-modal .form-group label {
+    color: #333 !important; /* Dark text for labels */
+}
+
+/* Ensure buttons inherit custom styles */
+.custom-modal .btn-primary {
+    background-color: #0492b3 !important; /* Reddish button color */
+    border-color: #0492b3 !important; /* Same border color */
+}
+
+.custom-modal .btn-secondary {
+    background-color: #6c757d !important; /* Grey color for close button */
+    border-color: #6c757d !important; /* Same border color */
+}
+
+
+
+

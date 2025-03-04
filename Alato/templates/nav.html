@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">Alato-Foodie</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#offers">Today's Offers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#restaurants">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#contact">Reach Me Out</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown" id="profileDropdown">
+                        <a class="nav-link" href="#" onclick="toggleDropdown()">{{user.username.title}}</a>
+                        <ul class="dropdown-menu" id="dropdownMenu" style="display: none; position: absolute; background-color: white; border-radius: 5px; padding: 10px;">
+                            
+                            <li><a class="dropdown-item" href="{% url 'order_confirmation' %}">My Orders</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "cart" %}">My Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'customer_logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="{% url 'customer_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="{% url 'customer_signup' %}">Sign up</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="{% url 'admin_manager:admin_login' %}">Admin Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block extra_css %}
+    <style>
+        /* Styling the dropdown menu */
+        .dropdown-menu {
+            background-color: white;
+            color: black;
+        }
+
+        /* Dropdown menu items */
+        .dropdown-menu .dropdown-item {
+            color: black;
+        }
+
+        /* Hover effect for dropdown items */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: cyan;
+            color: black;
+        }
+    </style>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownMenu = document.getElementById('dropdownMenu');
+            if (dropdownMenu.style.display === "none") {
+                dropdownMenu.style.display = "block";
+            } else {
+                dropdownMenu.style.display = "none";
+            }
+        }
+    </script>
+{% endblock extra_css %}

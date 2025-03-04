@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="restaurants" class="mt-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Popular Restaurants</h2>
+        <div class="row">
+            <!-- Card for each restaurant -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r1.jpe' %}g" alt="Restaurant 1">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 1 - Delicious cuisine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r2.jpe' %}g" alt="Restaurant 2">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 2 - Fine dining experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r3.jpe' %}g" alt="Restaurant 3">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 3 - Street food vibes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r4.jpe' %}g" alt="Restaurant 4">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 4 - Quick bites and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r5.jpe' %}g" alt="Restaurant 5">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 5 - Cozy dining atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r6.jpe' %}g" alt="Restaurant 6">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 6 - Gourmet cuisine.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r7.jpg' %}" alt="Restaurant 7">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 7 - Family-friendly environment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'images/r8.jpg' %}" alt="Restaurant 8">
+                    <div class="card-body">
+                        <p class="card-text">Restaurant 8 - Fresh ingredients daily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

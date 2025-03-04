@@ -1,0 +1,18 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Admin Dashboard</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{% url 'admin_manager:admin_restaurant_list' %}" class="btn btn-primary btn-lg btn-block">Add Restaurant</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{% url 'admin_manager:manage_orders' %}" class="btn btn-warning btn-lg btn-block">Manage Orders</a>
+        </div>
+        <div class="col-md-4">
+            {% comment %} <a href="{% url 'logout' %}" class="btn btn-danger btn-lg btn-block">Logout</a> {% endcomment %}
+        </div>
+    </div>
+</div>
+{% endblock %}
